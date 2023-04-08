@@ -122,7 +122,7 @@ func (bs *BearerServer) AuthorizationCode(w http.ResponseWriter, r *http.Request
 }
 
 // Generate token response
-func (bs *BearerServer) generateTokenResponse(grantType GrantType, credential string, secret string, refreshToken string, scope string, code string, redirectURI string, r *http.Request) (interface{}, int) {
+func (bs *BearerServer) GenerateTokenResponse(grantType GrantType, credential string, secret string, refreshToken string, scope string, code string, redirectURI string, r *http.Request) (interface{}, int) {
 	var resp *TokenResponse
 	switch grantType {
 	case PasswordGrant:
